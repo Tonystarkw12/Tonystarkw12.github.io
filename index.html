@@ -1,43 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>周子航的爱心世界</title>
+    <title>AI月老 - 你的智能情感伴侣</title>
     <style>
+        /* 全局样式 */
         body {
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8cdda, #1d2b64);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        /* 头部导航栏 */
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        /* 主体内容 */
+        main {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .hero-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* 特性区域 */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            animation: zoomIn 2s ease-in-out;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        
+        /* 心形动画 */
         .heart {
-            width: 100px;
-            height: 100px;
-            background-color: red;
+            width: 80px;
+            height: 80px;
+            background-color: #ff4757;
             position: relative;
             transform: rotate(-45deg);
-            animation: beat 1s infinite;
+            margin: 30px auto;
+            animation: beat 1.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
         }
         .heart::before,
         .heart::after {
             content: "";
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            border-radius: 100px;
+            width: 80px;
+            height: 80px;
+            background-color: #ff4757;
+            border-radius: 50%;
             position: absolute;
         }
         .heart::before {
-            left: 50px;
+            left: 40px;
             top: 0;
         }
         .heart::after {
             left: 0;
-            top: -50px;
+            top: -40px;
         }
+
+        /* 按钮 */
+        .cta-button {
+            background-color: #ff6b81;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 129, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #ff4757;
+            transform: scale(1.05);
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
         @keyframes beat {
             0%, 100% {
                 transform: scale(1) rotate(-45deg);
@@ -46,9 +174,37 @@
                 transform: scale(1.1) rotate(-45deg);
             }
         }
+
     </style>
 </head>
 <body>
-    <div class="heart"></div>
+    <header>
+        <h1>AI月老</h1>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>你的智能情感伴侣</h2>
+            <p>在茫茫人海中，让AI为你牵线搭桥。我们运用前沿的人工智能技术，为你匹配最契合的灵魂伴侣，开启一段美妙的缘分。</p>
+            <div class="heart"></div>
+            <a href="#" class="cta-button">立即体验</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>智能匹配</h3>
+                <p>通过深度学习算法，分析你的兴趣、性格和价值观，为你推荐最合适的对象。</p>
+            </div>
+            <div class="feature-card">
+                <h3>安全可靠</h3>
+                <p>我们严格保护用户隐私，所有信息都经过加密处理，让你安心交友。</p>
+            </div>
+            <div class="feature-card">
+                <h3>情感引导</h3>
+                <p>AI月老不仅是介绍人，更是你的情感顾问，为你提供沟通建议，助你关系升温。</p>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
